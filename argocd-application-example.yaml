@@ -5,7 +5,7 @@ metadata:
 spec:
   destination:
     name: in-cluster
-    namespace: demo
+    namespace: default
   project: example
   source:
     path: .
