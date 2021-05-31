@@ -8,8 +8,8 @@ spec:
     namespace: demo
   project: example
   source:
-    path: <your-git-path>
-    repoURL: <your-public-git-repo>
+    path: .
+    repoURL: https://github.com/fabiocruzcoelho/argocd-vault-plugin.git
   syncPolicy:
     automated:
       selfHeal: true
