@@ -1,15 +1,22 @@
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd-application-example
+  name: sample-secret-avp
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name: in-cluster
     namespace: default
-  project: example
+  project: default
   source:
     path: .
+    plugin:
+      name: argocd-vault-plugin
     repoURL: https://github.com/fabiocruzcoelho/argocd-vault-plugin.git
+    targetRevision: HEAD
   syncPolicy:
     automated:
       selfHeal: true
