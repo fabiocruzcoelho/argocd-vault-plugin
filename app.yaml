@@ -16,4 +16,7 @@ spec:
       repoURL: https://charts.visonneau.fr/
       chart: "generic-app"
       chartVersion: "0.0.11"
-      valueFiles: ['values-dit.yaml'] # resolved against source.repoURL and source.path
+      valueFiles: 
+      - values.yml
+      - values-dit.yaml
+
