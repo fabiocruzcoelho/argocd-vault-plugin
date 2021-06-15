@@ -1,5 +1,6 @@
 # Default values
-pods:
-  env:
-    - name: NODE_ENV
-      value: develop
+# Application specific names
+# Please define at least the 'nameOverride' variable when using this chart
+
+nameOverride: demo
+# fullNameOverride:
