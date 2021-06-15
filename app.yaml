@@ -1,8 +1,11 @@
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: sample-app
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: default
@@ -20,13 +23,11 @@ spec:
       parameters:
 
       # Release name override (defaults to application name)
-      releaseName: demo2
+      releaseName: demo
 
       valueFiles: 
       - values.yaml
       - values-dit.yaml
       
       values: |
-        nameOverride: demo2
-
-
+        nameOverride: demo
