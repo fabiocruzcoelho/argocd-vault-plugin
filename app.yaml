@@ -30,4 +30,5 @@ spec:
       - values-dit.yaml
       
       values: |
-        nameOverride: demo
+        generic-app:
+          nameOverride: demo
