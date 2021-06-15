@@ -1,8 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myapp-dit
+  name: sample-app
+  namespace: argocd
 spec:
+  destination:
+    namespace: default
+    server: https://kubernetets.default.svc
   project: default
   source:
     repoURL: https://github.com/fabiocruzcoelho/argocd-vault-plugin.git
