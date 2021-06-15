@@ -1,5 +1,6 @@
 # Default values
-pods:
-  env:
-    - name: NODE_ENV
-      value: develop
+generic-app:
+  pods:
+    env:
+      - name: NODE_ENV
+        value: develop
