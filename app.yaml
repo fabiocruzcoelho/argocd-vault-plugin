@@ -25,4 +25,9 @@ spec:
       valueFiles: 
       - values.yaml
       - values-dit.yaml
+      # Values file as block file
+
+      values: |
+        nameOverride: demo
+
 
