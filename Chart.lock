@@ -1,0 +1,6 @@
+dependencies:
+- name: generic-app
+  repository: https://charts.visonneau.fr/
+  version: 0.0.11
+digest: sha256:79f8fe1a399c719c360cb6db586e75c609fdf763f4b2a329db7de6d846c85b8a
+generated: "2021-06-15T15:39:43.583960551-03:00"
