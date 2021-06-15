@@ -2,5 +2,5 @@
 # Application specific names
 # Please define at least the 'nameOverride' variable when using this chart
 
-nameOverride: demo
+nameOverride:
 # fullNameOverride:
