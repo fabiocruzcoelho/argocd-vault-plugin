@@ -22,7 +22,7 @@ version: 0.1.0
 # follow Semantic Versioning. They should reflect the version the application is using.
 appVersion: "1.0"
 
-# dependencies:
-# - name: generic-app
-#   version: 0.0.11
-#   repository: https://charts.visonneau.fr/
+dependencies:
+- name: generic-app
+  version: 0.0.11
+  repository: https://charts.visonneau.fr/
