@@ -16,7 +16,13 @@ spec:
       repoURL: https://charts.visonneau.fr/
       chart: "generic-app"
       chartVersion: "0.0.11"
+      # helm specific config
+      parameters:
+
+      # Release name override (defaults to application name)
+      releaseName: demo
+
       valueFiles: 
-      - values.yml
+      - values.yaml
       - values-dit.yaml
 
