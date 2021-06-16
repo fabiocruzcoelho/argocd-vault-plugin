@@ -1,6 +1,6 @@
 # nameOverride -- name of the chart/release to override 'generic-app' with
 generic-app:
-  nameOverride: ${CI_PROJECT_NAME}
+  nameOverride: demo
 
 ##
 # Pods configuration
