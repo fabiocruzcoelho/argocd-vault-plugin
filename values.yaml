@@ -24,15 +24,15 @@ generic-app:
 
       # pods.image.pullSecrets -- Optional array of imagePullSecrets containing private registry credentials
       # Ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
-      pullSecrets:
-      - name: regcred
+      pullSecrets: []
+      # - name: regcred
 
       # pods.image.pullCredentials -- Automatically create a secret with the credentials and use it
       # Cannot be used in conjunction of image.pullSecrets
-      # pullCredentials:
-      #   registry: registry.gitlab.vitta.tools
-      #   username: argocd-deploy
-      #   password: vMyd_uc-asa
+      pullCredentials:
+        registry: registry.gitlab.vitta.tools
+        username: argocd-deploy
+        password: vMyd_uc-iGYxzqybTbWy
 
     # pods.replicas -- amount of desired pod(s) replica(s)
     # Ref: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#replicas
