@@ -16,7 +16,7 @@ spec:
   source:
     path: .
     repoURL: https://github.com/fabiocruzcoelho/argocd-vault-plugin.git
-    targetRevision: man
+    targetRevision: main
     # helm specific config
     helm:
       parameters:
