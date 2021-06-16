@@ -1,6 +1,6 @@
 ---
 generic-app:
-  nameOverride: demos
+  nameOverride: demo
 
   pods:
   # pods.controller -- controller used to schedule pods

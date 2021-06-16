@@ -23,7 +23,7 @@ spec:
       parameters:
 
     #   # Release name override (defaults to application name)
-      releaseName: demos
+      releaseName: demo
 
       valueFiles: 
       - values-default.yaml
