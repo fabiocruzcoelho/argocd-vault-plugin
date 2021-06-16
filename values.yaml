@@ -32,7 +32,7 @@ generic-app:
       pullCredentials:
         registry: registry.gitlab.vitta.tools
         username: argocd-deploy
-        password: vMyd_uc-iGYxzqybTbWy
+        password: asa
 
     # pods.replicas -- amount of desired pod(s) replica(s)
     # Ref: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#replicas

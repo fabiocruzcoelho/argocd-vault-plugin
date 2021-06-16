@@ -46,6 +46,11 @@ spec:
               name: registry.gitlab.vitta.tools/devops/nodejs-demo-app/nodejs-demo-app
               tag: develop
               pullPolicy: Always
+              pullCredentials:
+                registry: registry.gitlab.vitta.tools
+                username: argocd-deploy
+                password: vMyd_uc-iGYxzqybTbWy
+
   syncPolicy:
     automated:
       prune: true
