@@ -16,9 +16,9 @@ spec:
     targetRevision: HEAD
     path: .
     helm:
-      repoURL: https://charts.visonneau.fr/
-      chart: "generic-app"
-      chartVersion: "0.0.11"
+      # repoURL: https://charts.visonneau.fr/
+      # chart: "generic-app"
+      # chartVersion: "0.0.11"
       # helm specific config
       parameters:
 
@@ -26,7 +26,7 @@ spec:
       releaseName: demo
 
       valueFiles: 
-      - values.yaml
+      # - values.yaml
       - values-dit.yaml
       
       values: |
