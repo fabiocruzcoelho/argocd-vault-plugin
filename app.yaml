@@ -2,29 +2,52 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sample-app
+  name: nodejs-demo-app-dev
   namespace: argocd
+  labels:
+    app: demo
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: default
-    server: https://kubernetes.default.svc
-  project: default
+    namespace: nodejs-demo-app
+    server: https://0ECADEEC939AA89AC2CDCF742B33571B.gr7.us-east-1.eks.amazonaws.com
+  project: nodejs-demo-app
   source:
-    repoURL: https://github.com/fabiocruzcoelho/argocd-vault-plugin.git
-    targetRevision: HEAD
     path: .
+    repoURL: https://gitlab.vitta.tools/devops/nodejs-demo-app.git
+    targetRevision: develop
+    # helm specific config
     helm:
-    #   # repoURL: https://charts.visonneau.fr/
-    #   # chart: "generic-app"
-    #   # chartVersion: "0.0.11"
-    #   # helm specific config
       parameters:
-
-    #   # Release name override (defaults to application name)
+      # Release name override (defaults to application name)
       releaseName: demo
-
-      valueFiles: 
-      - values-default.yaml
-      - values-dev.yaml
+      # Helm values files for overriding values in the helm chart
+      # The path is relative to the spec.source.path directory defined above
+      valueFiles:
+        - values-default.yaml
+        - values-dev.yaml
+      # Values file as block file
+      values: |
+        generic-app:
+          nameOverride: demo
+          ingress:
+            enabled: false
+            hosts:
+              - nodejs-demo-app.dev.
+            tls:
+              - secretName: wildcard-crt
+                hosts:
+                  - nodejs-demo-app.dev.
+          pods:
+            replicas: 1
+            image:
+              name: registry.gitlab.vitta.tools/devops/nodejs-demo-app/nodejs-demo-app
+              tag: develop
+              pullPolicy: Always
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

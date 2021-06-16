@@ -13,7 +13,7 @@ generic-app:
 
     # Container image to use
     image:
-      # pods.image.name -- image repository/name
+    # pods.image.name -- image repository/name
       name:
 
       # pods.image.tag -- image tag
@@ -29,14 +29,14 @@ generic-app:
 
       # pods.image.pullCredentials -- Automatically create a secret with the credentials and use it
       # Cannot be used in conjunction of image.pullSecrets
-      pullCredentials: {}
-        # registry: quay.io
-        # username: someone
-        # password: sillyness
+      # pullCredentials:
+      #   registry: registry.gitlab.vitta.tools
+      #   username: argocd-deploy
+      #   password: vMyd_uc-asa
 
     # pods.replicas -- amount of desired pod(s) replica(s)
     # Ref: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#replicas
-    replicas:
+    replicas: 1
 
     # Specify revisionHistoryLimit (deployments only)
     # Ref: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#clean-up-policy
@@ -176,29 +176,6 @@ generic-app:
         targetPort: 80
         protocol: TCP
         name: http
-
-  ##
-  # Ingress configuration
-  ##
-
-  # ingress:
-  #   enabled: false
-  #   annotations:
-  #     kubernetes.io/ingress.class: nginx
-  #     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-
-  #   path: /
-  #   pathType: Prefix
-
-  #   service:
-  #     port:
-  #       name: http
-
-  #   hosts: []
-  #     # - example.com
-  #   tls: []
-  #     # - hosts:
-  #     #     - example.com
 
   ##
   # Pod Disruption Budget configuration
