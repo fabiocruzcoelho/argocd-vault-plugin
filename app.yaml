@@ -15,15 +15,15 @@ spec:
     repoURL: https://github.com/fabiocruzcoelho/argocd-vault-plugin.git
     targetRevision: HEAD
     path: .
-    # helm:
+    helm:
     #   # repoURL: https://charts.visonneau.fr/
     #   # chart: "generic-app"
     #   # chartVersion: "0.0.11"
     #   # helm specific config
-    #   parameters:
+      parameters:
 
     #   # Release name override (defaults to application name)
-    #   releaseName: demo
+      releaseName: demo
 
     #   valueFiles: 
     #   # - values.yaml
