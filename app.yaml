@@ -15,8 +15,8 @@ spec:
   project: nodejs-demo-app
   source:
     path: .
-    repoURL: https://gitlab.vitta.tools/devops/nodejs-demo-app.git
-    targetRevision: develop
+    repoURL: https://github.com/fabiocruzcoelho/argocd-vault-plugin.git
+    targetRevision: man
     # helm specific config
     helm:
       parameters:
