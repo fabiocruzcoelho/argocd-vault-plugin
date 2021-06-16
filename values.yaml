@@ -24,8 +24,8 @@ generic-app:
 
       # pods.image.pullSecrets -- Optional array of imagePullSecrets containing private registry credentials
       # Ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
-      pullSecrets: []
-      # - name: secretName
+      pullSecrets:
+      - name: regcred
 
       # pods.image.pullCredentials -- Automatically create a secret with the credentials and use it
       # Cannot be used in conjunction of image.pullSecrets
@@ -173,7 +173,7 @@ generic-app:
     enabled: true
     ports:
       - port: 80
-        targetPort: 8080
+        targetPort: 80
         protocol: TCP
         name: http
 
@@ -181,24 +181,24 @@ generic-app:
   # Ingress configuration
   ##
 
-  ingress:
-    enabled: false
-    annotations:
-      kubernetes.io/ingress.class: nginx
-      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+  # ingress:
+  #   enabled: false
+  #   annotations:
+  #     kubernetes.io/ingress.class: nginx
+  #     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 
-    path: /
-    pathType: Prefix
+  #   path: /
+  #   pathType: Prefix
 
-    service:
-      port:
-        name: http
+  #   service:
+  #     port:
+  #       name: http
 
-    hosts: []
-      # - example.com
-    tls: []
-      # - hosts:
-      #     - example.com
+  #   hosts: []
+  #     # - example.com
+  #   tls: []
+  #     # - hosts:
+  #     #     - example.com
 
   ##
   # Pod Disruption Budget configuration

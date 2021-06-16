@@ -1,6 +1,6 @@
 ---
 generic-app:
-  nameOverride: ${CI_PROJECT_NAME}
+  nameOverride: demos
 
   pods:
   # pods.controller -- controller used to schedule pods
@@ -10,11 +10,35 @@ generic-app:
   # Container image to use
   image:
     # pods.image.name -- image repository/name
-    name:
+    name: ${CI_REGISTRY_IMAGE}/${CI_PROJECT_NAME}
 
     # pods.image.tag -- image tag
-    tag:
+    tag: ${CI_COMMIT_REF_NAME}
 
     # pods.image.pullPolicy -- image pullPolicy
-    pullPolicy: IfNotPresent
-    
+    pullPolicy: Always
+
+    ingress:
+    enabled: false
+    annotations:
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+      certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+      certmanager.k8s.io/acme-challenge-type: dns01
+      kubernetes.io/ingress.class: nginx
+      kubernetes.io/tls-acme: "true"
+
+    path: /
+    pathType: Prefix
+
+    service:
+      port:
+        name: http
+
+    hosts: 
+      # - ${CI_PROJECT_NAME}.${KUBE_INGRESS_BASE_DOMAIN}
+      - oi-svc-api.dev.vitta.services
+    tls:
+      - hosts:
+          # - ${CI_PROJECT_NAME}.${KUBE_INGRESS_BASE_DOMAIN}
+          - oi-svc-api.dev.vitta.services
+        secretName: wildcard-crt

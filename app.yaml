@@ -28,7 +28,3 @@ spec:
       valueFiles: 
       - values-default.yaml
       - values-dev.yaml
-      
-      values: |
-        generic-app:
-          nameOverride: demos
