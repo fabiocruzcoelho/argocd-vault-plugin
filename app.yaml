@@ -25,9 +25,10 @@ spec:
     #   # Release name override (defaults to application name)
       releaseName: demo
 
-    #   valueFiles: 
-    #   # - values.yaml
-    #   - values-dit.yaml
+      valueFiles: 
+      - values-default.yaml
+      - values-dev.yaml
       
-    #   values: |
-    #     nameOverride: demo
+      values: |
+        generic-app:
+          nameOverride: demo

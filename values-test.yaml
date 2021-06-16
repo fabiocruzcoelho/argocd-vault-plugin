@@ -1,5 +1,0 @@
-# Default values
-# Application specific names
-# Please define at least the 'nameOverride' variable when using this chart
-generic-app:
-  nameOverride: demo
