@@ -1,0 +1,20 @@
+---
+generic-app:
+  nameOverride: ${CI_PROJECT_NAME}
+
+  pods:
+  # pods.controller -- controller used to schedule pods
+  # Can either be 'deployment', 'statefulset' or 'daemonset'
+  controller: deployment
+
+  # Container image to use
+  image:
+    # pods.image.name -- image repository/name
+    name:
+
+    # pods.image.tag -- image tag
+    tag:
+
+    # pods.image.pullPolicy -- image pullPolicy
+    pullPolicy: IfNotPresent
+    
